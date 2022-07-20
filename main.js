@@ -7,12 +7,12 @@ window.onload = () => {
         let todo = document.getElementById('todo');
         const todo_list = document.getElementById('todo-list');
         todos.push(todo.value);
-        todo_list.innerHTML = '';
         
-        for (let i = 0; i < todos.length; i ++)
-        {
-            todo_list.innerHTML += '<li>' + todos[i] + '</li>'            
-        }        
+        
+        const todo_template = todos.map ( t => '<li>' + t + '</li>');
+        
+        todo_list.innerHTML = todo_template.join('');
+        
         
         todo.value = "";
     }
